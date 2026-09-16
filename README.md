@@ -6,7 +6,7 @@ Health care and healthy living are essential for maintaining a healthy and activ
 
 ## 🏥 Health Care
 
-![Health Care](Screenshot_20260916_110)
+![Health Care](Screenshot_20260916_110531_Google.jpg)
 
 Health care helps people prevent diseases, identify health problems early, and receive proper treatment when needed.
 
@@ -22,7 +22,7 @@ Health care helps people prevent diseases, identify health problems early, and r
 
 ## 🥗 Healthy Living
 
-![Healthy Living](Screenshot_20260916_110)
+![Healthy Living](Screenshot_20260916_110859_Google.jpg)
 
 A healthy lifestyle helps us stay physically and mentally fit.
 
@@ -39,7 +39,7 @@ A healthy lifestyle helps us stay physically and mentally fit.
 
 ## ❤️ Complete Health
 
-![Complete Health](Screenshot_20260916_110)
+![Complete Health](Screenshot_20260916_110731_Google.jpg)
 
 Complete health involves taking care of different aspects of our well-being.
 
