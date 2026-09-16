@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Care & Healthy Living</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f1f8f6;
+            color: #333;
+        }
+
+        header {
+            background: #198754;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        header h1 {
+            font-size: 32px;
+        }
+
+        nav {
+            background: #146c43;
+            padding: 12px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        section {
+            padding: 35px 10%;
+            text-align: center;
+        }
+
+        .hero {
+            background: white;
+            padding: 40px;
+        }
+
+        .hero h2 {
+            color: #198754;
+            margin-bottom: 15px;
+        }
+
+        .cards {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 25px;
+        }
+
+        .card {
+            background: white;
+            width: 250px;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px #ccc;
+        }
+
+        .card h3 {
+            color: #198754;
+            margin: 10px;
+        }
+
+        .card p {
+            line-height: 1.5;
+        }
+
+        .tracker {
+            background: white;
+            max-width: 500px;
+            margin: auto;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px #ccc;
+        }
+
+        button {
+            background: #198754;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 10px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #146c43;
+        }
+
+        input {
+            padding: 10px;
+            margin: 7px;
+            width: 90%;
+            border: 1px solid #aaa;
+            border-radius: 5px;
+        }
+
+        #bmiResult {
+            margin-top: 15px;
+            font-weight: bold;
+            color: #198754;
+        }
+
+        footer {
+            background: #146c43;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>🏥 Health Care & Healthy Living</h1>
+    <p>Your health is your greatest wealth</p>
+</header>
+
+<nav>
+    <a href="#home">Home</a>
+    <a href="#tips">Health Tips</a>
+    <a href="#tracker">Water Tracker</a>
+    <a href="#bmi">BMI Calculator</a>
+</nav>
+
+<section id="home" class="hero">
+    <h2>Welcome to Healthy Living</h2>
+    <p>
+        This website helps people understand the importance of
+        healthy food, exercise, hydration, mental wellness and
+        regular health care.
+    </p>
+</section>
+
+<section id="tips">
+    <h2>🥗 Healthy Habits</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>🍎 Healthy Food</h3>
+            <p>
+                Eat fruits, vegetables, whole grains and other
+                nutritious foods for a balanced diet.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>🏃 Exercise</h3>
+            <p>
+                Stay physically active and exercise regularly
+                to maintain fitness.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>🧘 Mental Health</h3>
+            <p>
+                Take time to relax, manage stress and maintain
+                positive mental well-being.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>😴 Good Sleep</h3>
+            <p>
+                Get sufficient sleep and maintain a regular
+                sleeping schedule.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<section id="tracker">
+    <h2>💧 Water Tracker</h2>
+
+    <div class="tracker">
+        <p>Glasses of water today:</p>
+
+        <h2 id="waterCount">0</h2>
+
+        <button onclick="addWater()">+ Add Glass</button>
+        <button onclick="resetWater()">Reset</button>
+    </div>
+</section>
+
+<section id="bmi">
+    <h2>⚖️ BMI Calculator</h2>
+
+    <div class="tracker">
+
+        <input type="number" id="weight"
+               placeholder="Enter weight (kg)">
+
+        <input type="number" id="height"
+               placeholder="Enter height (cm)">
+
+        <button onclick="calculateBMI()">Calculate BMI</button>
+
+        <p id="bmiResult"></p>
+
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 Health Care & Healthy Living</p>
+    <p>Stay Healthy • Stay Happy • Stay Active ❤️</p>
+</footer>
+
+<script>
+
+    let water = 0;
+
+    function addWater() {
+        water++;
+        document.getElementById("waterCount").innerText = water;
+    }
+
+    function resetWater() {
+        water = 0;
+        document.getElementById("waterCount").innerText = water;
+    }
+
+    function calculateBMI() {
+
+        let weight =
+            parseFloat(document.getElementById("weight").value);
+
+        let height =
+            parseFloat(document.getElementById("height").value);
+
+        if (!weight || !height || weight <= 0 || height <= 0) {
+            document.getElementById("bmiResult").innerText =
+                "Please enter valid values.";
+            return;
+        }
+
+        let heightMeter = height / 100;
+
+        let bmi = weight / (heightMeter * heightMeter);
+
+        document.getElementById("bmiResult").innerText =
+            "Your BMI is: " + bmi.toFixed(2);
+    }
+
+</script>
+
+</body>
+</html>
